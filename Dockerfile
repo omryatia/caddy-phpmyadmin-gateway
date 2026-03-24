@@ -1,6 +1,6 @@
 FROM caddy:2
 
-COPY Caddyfile.template /etc/caddy/Caddyfile.template
+COPY Caddyfile /etc/caddy/Caddyfile
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
