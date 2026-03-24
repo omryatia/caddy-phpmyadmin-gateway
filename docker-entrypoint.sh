@@ -18,6 +18,4 @@ fi
 
 export BASIC_AUTH_PASSWORD_HASH="$(caddy hash-password --plaintext "$BASIC_AUTH_PASSWORD")"
 
-envsubst < /etc/caddy/Caddyfile.template > /etc/caddy/Caddyfile
-
 exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
