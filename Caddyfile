@@ -1,0 +1,10 @@
+:80 {
+	@health path /healthz
+	respond @health 200
+
+	basic_auth {
+		{$BASIC_AUTH_USER} {$BASIC_AUTH_PASSWORD_HASH}
+	}
+
+	reverse_proxy {$PMA_UPSTREAM}
+}
