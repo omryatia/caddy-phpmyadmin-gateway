@@ -6,5 +6,8 @@
 		{$BASIC_AUTH_USER} {$BASIC_AUTH_PASSWORD_HASH}
 	}
 
-	reverse_proxy {$PMA_UPSTREAM}
+	reverse_proxy {$PMA_UPSTREAM} {
+		header_up X-Forwarded-Proto https
+		header_up X-Forwarded-Port 443
+	}
 }
